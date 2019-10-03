@@ -10,23 +10,34 @@ import SwiftUI
 import Combine
 
 class ImageLoader: ObservableObject {
+    var didChange = PassthroughSubject<Data, Never>()
     
-    var didChange = PassthroughSubject<ImageLoader, Never>()
-    
-    var data: Data = Data() {
+    var data = Data() {
         didSet {
-            didChange.send(self)
+            didChange.send(data)
         }
     }
     
     init(imageUrl: String) {
-        guard let url = URL(string: imageUrl) else {return}
+        guard let url = URL(string: imageUrl) else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data else {return}
+            guard let data = data else { return }
             
             DispatchQueue.main.async {
                 self.data = data
             }
+            
+            }.resume()
+    }
+    
+    init(imageUrl: URL, placeHolder: String) {
+        URLSession.shared.dataTask(with: imageUrl) { (data, _, _) in
+        guard let data = data else { return }
+        
+        DispatchQueue.main.async {
+            self.data = data
+        }
+        
         }.resume()
     }
 }

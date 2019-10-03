@@ -11,7 +11,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-                WPImage(imageUrl: "https://firebasestorage.googleapis.com/v0/b/lvlopers.appspot.com/o/images_user%2F3CactcFni5QxYpQXM5TOCEBK6Y43.jpg?alt=media&token=b2966056-c850-4b73-a07e-f7a4c5aac15c")
+                WPImage(imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg")
+             
         }
     }
 }
