@@ -16,9 +16,8 @@ struct WPImage: View {
         imageLoader = ImageLoader(imageUrl: imageUrl)
     }
     
-    
     var body: some View {
-        Image(uiImage: (imageLoader.data.count == 0) ? UIImage(named: "bb")! : UIImage(data: imageLoader.data)!)
+        Image(uiImage: (imageLoader.data.count == 0) ? UIImage(named: "placeholder")! : UIImage(data: imageLoader.data)!)
     }
 
 }
