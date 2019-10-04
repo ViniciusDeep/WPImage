@@ -9,24 +9,21 @@
 import SwiftUI
 
 struct WPImage: View {
-    
+
     @ObservedObject fileprivate var imageLoader: ImageLoader
-    
+
     fileprivate let image = UIImage()
-    
+
     init(imageUrl: String) {
-		self.imageLoader = ImageLoader(imageUrl: imageUrl)
-	}
-    
-    init(imageUrl: URL, placeHolder: String) {
-        imageLoader = ImageLoader(imageUrl: imageUrl, placeHolder: placeHolder)
+        self.imageLoader = ImageLoader(imageUrl: imageUrl)
+    }
+
+    init(imageUrl: String, placeholder: String) {
+        imageLoader = ImageLoader(imageUrl: imageUrl, placeholder: placeholder)
+    }
+
+    var body: some View {
+        Image(uiImage: (imageLoader.data.count == 0) ? image : UIImage(data: imageLoader.data)!)
     }
     
-    var body: some View {
-
-		Image(uiImage: (imageLoader.data.count == 0) ? image : UIImage(data: imageLoader.data)!) 
-
-	}
-
 }
- 
