@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-                WPImage(imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg")
+            WPImage(imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg", placeholder: "placeholder")
         }
     }
 }
