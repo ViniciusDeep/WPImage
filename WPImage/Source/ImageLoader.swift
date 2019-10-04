@@ -10,11 +10,13 @@ import SwiftUI
 import Combine
 
 class ImageLoader: ObservableObject {
+	
     var didChange = PassthroughSubject<Data, Never>()
     
-    var data = Data() {
+	@Published var data = Data() {
         didSet {
             didChange.send(data)
+			
         }
     }
     
@@ -22,12 +24,10 @@ class ImageLoader: ObservableObject {
         guard let url = URL(string: imageUrl) else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else { return }
-            
             DispatchQueue.main.async {
                 self.data = data
             }
-            
-            }.resume()
+		}.resume()
     }
     
     init(imageUrl: URL, placeHolder: String) {
