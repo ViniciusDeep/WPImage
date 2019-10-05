@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		796B817E2348C03F007F7A10 /* WPImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 796B817D2348C03F007F7A10 /* WPImageKit */; };
 		79C6B5F9234577430035EB50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6B5F8234577430035EB50 /* AppDelegate.swift */; };
 		79C6B5FB234577430035EB50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6B5FA234577430035EB50 /* SceneDelegate.swift */; };
 		79C6B5FD234577430035EB50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6B5FC234577430035EB50 /* ContentView.swift */; };
@@ -14,8 +15,6 @@
 		79C6B602234577440035EB50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C6B601234577440035EB50 /* Preview Assets.xcassets */; };
 		79C6B605234577440035EB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79C6B603234577440035EB50 /* LaunchScreen.storyboard */; };
 		79C6B610234577440035EB50 /* WPImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6B60F234577440035EB50 /* WPImageTests.swift */; };
-		79C6B61C2345789E0035EB50 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6B61B2345789E0035EB50 /* ImageLoader.swift */; };
-		79C6B61E23457A0C0035EB50 /* WPImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C6B61D23457A0C0035EB50 /* WPImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		796B817B2348C01E007F7A10 /* WPImageKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WPImageKit; sourceTree = "<group>"; };
 		79C6B5F5234577430035EB50 /* WPImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C6B5F8234577430035EB50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79C6B5FA234577430035EB50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,8 +40,6 @@
 		79C6B60B234577440035EB50 /* WPImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WPImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C6B60F234577440035EB50 /* WPImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPImageTests.swift; sourceTree = "<group>"; };
 		79C6B611234577440035EB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79C6B61B2345789E0035EB50 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		79C6B61D23457A0C0035EB50 /* WPImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796B817E2348C03F007F7A10 /* WPImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +61,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		796B817C2348C03F007F7A10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		79C6B5EC234577430035EB50 = {
 			isa = PBXGroup;
 			children = (
+				796B817B2348C01E007F7A10 /* WPImageKit */,
 				79C6B5F7234577430035EB50 /* WPImage */,
 				79C6B60E234577440035EB50 /* WPImageTests */,
 				79C6B5F6234577430035EB50 /* Products */,
+				796B817C2348C03F007F7A10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,8 +122,6 @@
 		79C6B61A2345786D0035EB50 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				79C6B61B2345789E0035EB50 /* ImageLoader.swift */,
-				79C6B61D23457A0C0035EB50 /* WPImage.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -153,6 +159,9 @@
 			dependencies = (
 			);
 			name = WPImage;
+			packageProductDependencies = (
+				796B817D2348C03F007F7A10 /* WPImageKit */,
+			);
 			productName = WPImage;
 			productReference = 79C6B5F5234577430035EB50 /* WPImage.app */;
 			productType = "com.apple.product-type.application";
@@ -239,9 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79C6B5F9234577430035EB50 /* AppDelegate.swift in Sources */,
-				79C6B61E23457A0C0035EB50 /* WPImage.swift in Sources */,
 				79C6B5FB234577430035EB50 /* SceneDelegate.swift in Sources */,
-				79C6B61C2345789E0035EB50 /* ImageLoader.swift in Sources */,
 				79C6B5FD234577430035EB50 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +512,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		796B817D2348C03F007F7A10 /* WPImageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WPImageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 79C6B5ED234577430035EB50 /* Project object */;
 }

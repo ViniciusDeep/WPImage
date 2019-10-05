@@ -8,21 +8,22 @@
 
 import SwiftUI
 
-struct WPImage: View {
+@available(iOS 13.0, *)
+public struct WPImage: View {
 
     @ObservedObject fileprivate var imageLoader: ImageLoader
 
     fileprivate let image = UIImage()
 
-    init(imageUrl: String) {
+    public init(imageUrl: String) {
         self.imageLoader = ImageLoader(imageUrl: imageUrl)
     }
 
-    init(imageUrl: String, placeholder: String) {
+    public init(imageUrl: String, placeholder: String) {
         imageLoader = ImageLoader(imageUrl: imageUrl, placeholder: placeholder)
     }
 
-    var body: some View {
+    public var body: some View {
         Image(uiImage: (imageLoader.data.count == 0) ? image : UIImage(data: imageLoader.data)!)
     }
     
