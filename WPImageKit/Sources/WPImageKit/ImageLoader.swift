@@ -9,7 +9,8 @@
 import SwiftUI
 import Combine
 
-class ImageLoader: ObservableObject {
+@available(iOS 13.0, *)
+public class ImageLoader: ObservableObject {
 
     var didChange = PassthroughSubject<Data, Never>()
 
