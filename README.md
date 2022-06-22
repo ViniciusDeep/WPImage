@@ -3,7 +3,7 @@
 ⚠️ **Warning**
 > This lib was deprecated, because in iOS 15 Apple have been launched the AsyncImage with the same objetive to use AsyncImage it's look like:
 ```swift
-import WPImageKit
+import SwiftUI
 
 struct ContentView: View {
     var body: some View {
