@@ -1,4 +1,23 @@
 # WPImage 🗾
+
+⚠️ **Warning**
+> This lib was deprecated, because in iOS 15 Apple have been launched the AsyncImage with the same objetive to use AsyncImage it's look like:
+```swift
+import WPImageKit
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            AsyncImage(url: URL(string: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"!)) { image in 
+                image.resizable()
+            }
+        }
+    }
+}
+```
+
+
+
 <p align="center">
     <img width="417" alt="Screen Shot 2019-08-28 at 22 25 25" src="https://user-images.githubusercontent.com/32227073/66255734-99cf8680-e75d-11e9-9e13-6fc6905f8ec9.png">
 </p>
